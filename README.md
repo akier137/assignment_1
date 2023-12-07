@@ -32,4 +32,32 @@ There are automated checks that verify that your submission is correct:
 ---
 
 ## Your report
+# Regression Analysis Project Report
+
+## Design Choices Explanation
+
+### `MultipleLinearRegression` Class:
+
+- **Private Coefficients Attribute (`self._coefficients`):** This attribute is designated as private (`self._coefficients`) to encapsulate it within the class. Making it private prevents direct modification from external sources and ensures that it's accessed or modified only through class methods.
+
+- **Train Method:** The `train` method computes the coefficients for the linear regression model using the normal equation. It prepares the input data by adding an intercept term, calculates intermediate values, and finally computes the coefficients.
+
+- **Predict Method:** The `predict` method uses the trained coefficients to make predictions on new input data. It checks if coefficients exist before making predictions to prevent errors.
+
+### `RegressionPlotter` Class:
+
+- **Plot Single Feature Method:** This method visualizes a single feature against the target variable along with the regression line. It utilizes the coefficients from the trained model (`model._coefficients`) to plot the regression line.
+
+## Usage and Execution:
+
+The provided Python scripts demonstrate the following functionality:
+
+- Generating sample data using `make_regression`.
+- Training a `MultipleLinearRegression` model on the generated data.
+- Showcasing prediction functionality and comparison with ground truth values.
+- Using `RegressionPlotter` to visualize the regression line against a single feature.
+
+## Conclusion:
+
+The design choices prioritize encapsulation and modularity, allowing for easy extension or modification of functionality. The clear separation of concerns between the regression model, plotting, and data handling enhances code readability and maintainability.
 
